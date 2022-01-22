@@ -1,25 +1,30 @@
 <template>
   <div id="app">
     <!-- Carts are: -->
-    <Todos />
-
     <!-- Using global technique: -->
-    <pre>
+    <!-- <pre>
       {{ $todoStore.todos }}
-    </pre>
+    </pre> -->
     <!-- <Product /> -->
+    <!-- <Todos /> -->
+    <!-- <Counter /> -->
+    <Register />
   </div>
 </template>
 
 <script>
-import Product from "./components/Product";
-import Todos from "./components/Todos";
+// import Product from "./components/Product";
+// import Todos from "./components/Todos";
+// import Counter from "./components/Counter";
+import Register from "./components/Register";
 
 export default {
   name: "App",
   components: {
-    Product,
-    Todos,
+    // Product,
+    // Todos,
+    // Counter,
+    Register,
   },
   mounted() {},
 };
