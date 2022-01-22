@@ -8,7 +8,7 @@
     <br />
     <br />
 
-    <button @click="todoStore.todos.splice(0, 10)">Remove 10</button>
+    <button @click="todoStore.todos.splice(0, 10)">Remove Ten</button>
     <br />
     <div style="display: flex; flex-wrap: wrap">
       <div
