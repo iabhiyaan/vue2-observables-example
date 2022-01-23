@@ -1,30 +1,48 @@
 <template>
   <div id="app">
+    <header>This is header</header>
+    <br />
+    <br />
+
+    <br />
+
+    <br />
+
     <!-- Carts are: -->
     <!-- Using global technique: -->
     <!-- <pre>
-      {{ $todoStore.todos }}
+      From App hai: {{ $todoStore.todos.length }}
     </pre> -->
     <!-- <Product /> -->
-    <!-- <Todos /> -->
+    <Todos />
     <!-- <Counter /> -->
-    <Register />
+    <br />
+    <br />
+
+    <!-- <div style="display: flex">
+      <div style="margin-right: 24px">
+        <Register />
+      </div>
+      <Reset />
+    </div> -->
   </div>
 </template>
 
 <script>
 // import Product from "./components/Product";
-// import Todos from "./components/Todos";
-// import Counter from "./components/Counter";
+import Todos from "./components/Todos";
+import Counter from "./components/Counter";
 import Register from "./components/Register";
+import Reset from "./components/Reset";
 
 export default {
   name: "App",
   components: {
     // Product,
-    // Todos,
-    // Counter,
+    Todos,
+    Counter,
     Register,
+    Reset,
   },
   mounted() {},
 };

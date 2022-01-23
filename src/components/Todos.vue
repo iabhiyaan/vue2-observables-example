@@ -1,6 +1,7 @@
 <template>
   <div v-if="todoStore">
-    Total Todos: {{ this.todoStore.getTodoLength }}
+    Total Todos:
+    {{ this.todoStore.getTodoLength }}
     <br />
     <br />
 

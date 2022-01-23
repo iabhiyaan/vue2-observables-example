@@ -39,7 +39,6 @@ export default function usePasswordValidator() {
       state.valid_password = false;
     }
   }
-
   return {
     state,
     checkPassword

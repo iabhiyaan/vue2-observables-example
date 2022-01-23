@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+// for reusing logics
 export default function useCounter() {
   const state = Vue.observable({
     count: 0

@@ -9,7 +9,7 @@
 import useCounter from "../composables/useCounter";
 export default {
   name: "Counter",
-  mounted() {
+  created() {
     this.counter = useCounter();
   },
   data() {

@@ -5,7 +5,6 @@ const todoStore = Vue.observable({
 });
 
 // computed properties
-
 Object.defineProperty(todoStore, "getTodoLength", {
   enumerable: true,
   get() {

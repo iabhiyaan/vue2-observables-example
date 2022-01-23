@@ -1,6 +1,10 @@
 <template>
   <div>
-    Register:
+    Reset:
+    <button @click="counter.incrementCounter">Increase</button>
+    {{ counter.state.count }}
+    <br />
+
     <input type="text" @input="passwordValidator.checkPassword('', $event)" />
     <p>
       Password Strength:
@@ -28,14 +32,18 @@
 <script>
 import usePasswordValidator from "../composables/usePasswordValidator";
 
+import useCounter from "../composables/useCounter";
+
 export default {
-  name: "Register",
+  name: "Reset",
   created() {
     this.passwordValidator = usePasswordValidator();
+    this.counter = useCounter();
   },
   data() {
     return {
       passwordValidator: null,
+      counter: null,
     };
   },
 };
