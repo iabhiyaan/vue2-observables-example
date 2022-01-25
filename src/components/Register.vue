@@ -5,6 +5,8 @@
     <p>
       Password Strength:
       {{ passwordValidator.state.valid_password ? "Strong" : "Weak" }}
+      <br />
+      {{ passwordValidator.state.checkPasswordScore }}
     </p>
     <p>
       contains eight characters:

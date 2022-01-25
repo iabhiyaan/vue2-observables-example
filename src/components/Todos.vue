@@ -1,5 +1,11 @@
 <template>
   <div v-if="todoStore">
+    <button @click="todoStore.setTodoLength = [{}]">SET</button>
+    <br />
+
+    Abhiyan: {{ todoStore.abhiyan.length }}
+    <br />
+
     Total Todos:
     {{ this.todoStore.getTodoLength }}
     <br />

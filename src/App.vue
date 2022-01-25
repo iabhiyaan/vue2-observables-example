@@ -14,17 +14,17 @@
       From App hai: {{ $todoStore.todos.length }}
     </pre> -->
     <!-- <Product /> -->
-    <Todos />
+    <!-- <Todos /> -->
     <!-- <Counter /> -->
     <br />
     <br />
 
-    <!-- <div style="display: flex">
+    <div style="display: flex">
       <div style="margin-right: 24px">
         <Register />
       </div>
       <Reset />
-    </div> -->
+    </div>
   </div>
 </template>
 
