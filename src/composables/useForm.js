@@ -24,7 +24,7 @@ export default function useForm(formData, route) {
       alert(route.post);
       resetState();
     } else {
-      alert(route.post, state.id);
+      alert(`${route.post}/${state.id}`);
       resetState();
     }
   }
