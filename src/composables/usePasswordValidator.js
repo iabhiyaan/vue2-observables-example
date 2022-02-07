@@ -39,17 +39,6 @@ export default function usePasswordValidator() {
       state.valid_password = false;
     }
   }
-
-  const vm = new Vue({});
-  // watchers
-  vm.$watch(
-    () => state.valid_password,
-    (newValue) => {
-      console.log("Password valid changed to: ", newValue);
-    },
-    { deep: true }
-  );
-
   return {
     state,
     checkPassword

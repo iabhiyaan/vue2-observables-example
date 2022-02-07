@@ -8,6 +8,7 @@ export default function useForm(formData, route) {
     });
   }
 
+  // tracking state
   let state = setInitialFormData();
 
   function createFn() {
@@ -15,9 +16,7 @@ export default function useForm(formData, route) {
   }
 
   function resetState() {
-    Object.keys(initialState).forEach((key) => {
-      state[key] = initialState[key];
-    });
+    copyState(initialState);
   }
 
   function submitForm() {
@@ -25,9 +24,19 @@ export default function useForm(formData, route) {
       alert(route.post);
       resetState();
     } else {
-      alert(route.update);
+      alert(route.post, state.id);
       resetState();
     }
+  }
+
+  function edit(data) {
+    copyState(data);
+  }
+
+  function copyState(states) {
+    Object.keys(states).forEach((key) => {
+      state[key] = states[key];
+    });
   }
 
   return {
@@ -35,6 +44,7 @@ export default function useForm(formData, route) {
     setInitialFormData,
     createFn,
     submitForm,
-    resetState
+    resetState,
+    edit
   };
 }

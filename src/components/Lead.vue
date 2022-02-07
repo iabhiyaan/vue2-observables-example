@@ -9,6 +9,9 @@
       <input type="text" v-model="useForm.mobile_number" />
       <button>Submit</button>
     </form>
+    <button @click="formComposable.edit({ id: 1, email: 'Abhiyan' })">
+      Edit
+    </button>
   </div>
 </template>
 
@@ -20,7 +23,6 @@ export default {
     this.formComposable = useForm(this.initialFormData(), {
       get: "https://api.lead",
       post: "https://api.lead/post",
-      update: "https://api.lead/1",
     });
   },
   data() {
