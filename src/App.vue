@@ -14,17 +14,21 @@
       From App hai: {{ $todoStore.todos.length }}
     </pre> -->
     <!-- <Product /> -->
-    <!-- <Todos /> -->
+    <Todos style="display: none" />
     <!-- <Counter /> -->
     <br />
     <br />
+    <Task />
+    <br />
+    <br />
+    <Lead />
 
-    <div style="display: flex">
+    <!-- <div style="display: flex">
       <div style="margin-right: 24px">
         <Register />
       </div>
       <Reset />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -34,27 +38,23 @@ import Todos from "./components/Todos";
 import Counter from "./components/Counter";
 import Register from "./components/Register";
 import Reset from "./components/Reset";
+import Task from "./components/Task";
+import Lead from "./components/Lead";
 
 export default {
   name: "App",
   components: {
-    // Product,
+    Task,
+    Lead,
     Todos,
-    Counter,
-    Register,
-    Reset,
+    // Product,
+    // Counter,
+    // Register,
+    // Reset,
   },
   mounted() {},
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
