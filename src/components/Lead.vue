@@ -6,6 +6,10 @@
     <button @click="localCreateFn">Create</button>
     <button @click="useForm.resetState">Close</button>
 
+    <button @click="formData.mobile_numbers.push({ num: '123123' })">
+      Add New Number
+    </button>
+
     <form v-if="formData.formDialog" @submit.prevent="submitForm">
       <input type="text" v-model="formData.email" />
       <input type="text" v-model="formData.mobile_number" />
@@ -45,7 +49,7 @@ export default {
     initialFormData() {
       return {
         email: "",
-        mobile_number: "",
+        mobile_numbers: [],
       };
     },
     localCreateFn() {
