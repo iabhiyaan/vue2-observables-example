@@ -1,12 +1,12 @@
 <template>
   <div>
-    <pre>{{ useForm }}</pre>
+    <pre>{{ formData }}</pre>
 
-    <button @click="formComposable.createFn">Create</button>
-    <button @click="formComposable.resetState">Close</button>
+    <button @click="useForm.createFn">Create</button>
+    <button @click="useForm.resetState">Close</button>
 
-    <form v-if="useForm.formDialog" @submit.prevent="formComposable.submitForm">
-      <input type="text" v-model="useForm.title" />
+    <form v-if="formData.formDialog" @submit.prevent="useForm.submitForm">
+      <input type="text" v-model="formData.title" />
       <button>Submit</button>
     </form>
   </div>
@@ -17,7 +17,7 @@ import useForm from "../composables/useForm";
 export default {
   name: "Task",
   created() {
-    this.formComposable = useForm(this.initialFormData(), {
+    this.useForm = useForm(this.initialFormData(), {
       get: "https://api.task",
       post: "https://api.task/post",
       update: "https://api.task/1",
@@ -25,12 +25,12 @@ export default {
   },
   data() {
     return {
-      formComposable: null,
+      useForm: null,
     };
   },
   computed: {
-    useForm() {
-      return this.formComposable.state;
+    formData() {
+      return this.useForm.state.formData;
     },
   },
   methods: {

@@ -2,46 +2,59 @@ import Vue from "vue";
 
 export default function useForm(formData, route) {
   const initialState = { ...formData, formDialog: false };
-  function setInitialFormData() {
-    return Vue.observable({
-      ...initialState
-    });
-  }
 
   // tracking state
-  let state = setInitialFormData();
+  const state = Vue.observable({
+    formData: { ...initialState }
+  });
 
   function createFn() {
-    state.formDialog = true;
+    state.formData.formDialog = true;
   }
 
   function resetState() {
-    copyState(initialState);
+    state.formData = { ...initialState };
   }
 
   function submitForm() {
-    if (!state.id) {
-      alert(route.post);
-      resetState();
+    if (!state.formData.id) {
+      console.log(route.post);
+      return new Promise((res, rej) => {
+        return setTimeout(() => {
+          res({ payload: [{ id: 1, email: "iabhiyaan" }] });
+          resetState();
+        }, 2000);
+      });
     } else {
-      alert(`${route.post}/${state.id}`);
-      resetState();
+      console.log(`${route.post}/${state.formData.id}`);
+      return new Promise((res, rej) => {
+        return setTimeout(() => {
+          res({ isUpdate: true, payload: { id: 1, email: "updated emal" } });
+          resetState();
+        }, 2000);
+      });
     }
   }
 
   function edit(data) {
-    copyState(data);
+    state.formData = { ...state.formData, ...data };
   }
 
-  function copyState(states) {
-    Object.keys(states).forEach((key) => {
-      state[key] = states[key];
-    });
-  }
+  // function copyState(states) {
+  //   Object.keys(states).forEach((key) => {
+  //     state[key] = states[key];
+  //   });
+  // }
+
+  // function setInitialFormData() {
+  //   return Vue.observable({
+  //     ...initialState
+  //   });
+  // }
 
   return {
     state,
-    setInitialFormData,
+    // setInitialFormData,
     createFn,
     submitForm,
     resetState,

@@ -1,34 +1,34 @@
 <template>
   <div id="app">
     <header>This is header</header>
-    <br />
-    <br />
-
-    <br />
-
-    <br />
-
-    <!-- Carts are: -->
-    <!-- Using global technique: -->
-    <!-- <pre>
+    <div>
+      <!-- Carts are: -->
+      <!-- Using global technique: -->
+      <!-- <pre>
       From App hai: {{ $todoStore.todos.length }}
     </pre> -->
-    <!-- <Product /> -->
-    <Todos style="display: none" />
-    <!-- <Counter /> -->
-    <br />
-    <br />
-    <Task />
-    <br />
-    <br />
-    <Lead />
+      <!-- <Product /> -->
+      <Todos style="display: none" />
+      <!-- <Counter /> -->
+      <br />
+      <br />
+      <Task />
+      <br />
+      <br />
+      <Lead />
 
-    <!-- <div style="display: flex">
+      <!-- <div style="display: flex">
       <div style="margin-right: 24px">
         <Register />
       </div>
       <Reset />
     </div> -->
+    </div>
+    <div style="display: none">
+      <Form />
+      <br />
+      <CreateForm />
+    </div>
   </div>
 </template>
 
@@ -40,6 +40,8 @@ import Register from "./components/Register";
 import Reset from "./components/Reset";
 import Task from "./components/Task";
 import Lead from "./components/Lead";
+import Form from "./components/Form";
+import CreateForm from "./components/CreateForm";
 
 export default {
   name: "App",
@@ -47,6 +49,8 @@ export default {
     Task,
     Lead,
     Todos,
+    Form,
+    CreateForm,
     // Product,
     // Counter,
     // Register,
